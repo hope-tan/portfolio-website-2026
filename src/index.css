@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@theme inline{
+  --color-border: hsl(var(--border))
+  --color-background: hsl(var(--background))
+  --color-foreground: hsl(var(--foreground))
+
+  --color-primary: hsl(var(--primary))
+  --color-primary-foreground: hsl(var(--primary-foreground))
+
+  --color-card: hsl(var(--card))
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+  --animate-fade-in-delay-5: fade-in 0.7s ease-out 1.5s forwards;
+  --animate-fade-in-delay-6: fade-in 0.7s ease-out 1.7s forwards;
+  --animate-meteor: meteor 5s linear infinite;
+  --animate-slide-across: slide-across 60s linear infinite;
+  --animate-blob: 4s infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse-subtle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+  @keyframes fade-in {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); }
+  }
+  @keyframes meteor {
+    0% { 
+      transform: rotate(215deg) translateX(0);
+      opacity: 1; }
+    70% { opacity: 1; }
+    100% { 
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
+  }
+  @keyframes slide-across {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+  @keyframes blob {
+    0% {
+      transform: scale(1);
+    }
+    33% {
+      transform: scale(1.1);
+    }
+    66% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+@layer base {
+  :root{
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --border: 214 32% 91%;
+    --primary: 222 47% 4%;
+    --primary-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+  }
+  .dark {
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
+    --border: 217 33% 20%;
+    --primary: 208 54% 80%;
+    --primary-foreground: 213 31% 91%;
+    --card: 222 47% 8%;
+  }
+  * {
+    @apply border-[hsl(var(--border))];
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply transition-colors duration-300;
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@utility text-outline{
+  text-shadow:
+   -0.5px -0.5px 0 #000000,  
+    0.5px -0.5px 0 #000000,
+    -0.5px 0.5px 0 #000000,
+     0.5px 0.5px 0 #000000;
+}
+@utility text-glow {
+  @apply relative;
+  text-shadow: 0 0 20px rgb(129, 238, 253);
+}
+
+@utility card-hover {
+  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+}
+
+@utility gradient-border {
+  @apply relative rounded-md;
+  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+
+
+@utility buttons {
+  @apply relative rounded-md cursor-pointer;
+  @apply px-6 py-2 rounded-full font-medium transition-all duration-300 hover:shadow-[0_0_10px_hsl(var(--primary))];
+  @apply bg-[hsl(var(--primary))] text-[hsl(var(--background))];
+  hover:scale-105 active:scale-95;
+}
+
+@utility link-buttons {
+  @apply border p-3 rounded-full bg-[hsl(var(--primary))]/10 cursor-pointer transition-colors;
+  @apply duration-300 hover:shadow-[0_0_7px_hsl(var(--primary))] hover:bg-[hsl(var(--primary))]/90 hover:transition-all;
+}
+
+@utility star {
+  @apply absolute rounded-full bg-white;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+}
+
+@utility meteor {
+  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+}
+
+@utility cloud{
+  @apply absolute w-72 h-72 bg-white rounded-full opacity-50;
+  box-shadow:
+      0px -100px 0px 0px white,
+      0px -50px 0px 0px white,
+      50px -40px 0px 0px white,
+      -70px -40px 0px 0px white,
+      -70px 0px 0px 0px white,
+      -150px 0px 0px 0px white,
+      150px 0px 0px 0px white,
+      80px 0px 0px 0px white;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
