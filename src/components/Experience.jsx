@@ -7,8 +7,8 @@ const experiences = [
         date: "May 2026 – Present",
         image: "/capital-one.png",
         description:
-            "Working on cloud security engineering initiatives protecting enterprise cloud infrastructure.",
-        tags: ["AWS", "Cloud Security", "Kubernetes"],
+            "Engineering a Python-based Temporal workflow system to automate IAM approval and access governance across 800+ AWS, GCP, and Azure platform services, integrating Jira, Slack, and internal systems to reduce manual access workflows. Orchestrating agentic workflows with Claude Code.",
+        tags: ["AWS", "GCP", "Azure", "IAM", "Cloud Security", "Python", "Temporal", "Agentic Coding"],
     },
     {
         role: "Product Security Analyst",
@@ -16,8 +16,8 @@ const experiences = [
         date: "Sep 2025 – May 2026",
         image: "/calix.png",
         description:
-            "Performed product security assessments and collaborated with engineering teams to improve security posture.",
-        tags: ["Product Security", "Threat Modeling", "Application Security"],
+            "Conducted root cause analysis on 3,000+ software vulnerabilities across GCP environment, tracing recurring findings to outdated Terraform-managed infrastructure. Presented executive-level findings and data-driven scalable remediation and prevention strategies projected to reduce recurring vulnerabilities by 70%",
+        tags: ["Product Security", "GCP", "Threat Modeling", "Vulnerability Management"],
     },
     {
         role: "Cloud Product Security Engineering Intern",
@@ -25,7 +25,7 @@ const experiences = [
         date: "May 2025 – Aug 2025",
         image: "/calix.png",
         description:
-            "Worked on cloud product security and automation initiatives during a summer internship.",
+            "Engineered custom YARA-L detection logic in Google SecOps after triaging 30+ AWS and GCP vulnerabilities, expanding cloud threat detection and supporting secure infrastructure serving 1,600+ B2B clients. Led incident response investigations by correlating CrowdStrike, SIEM, and Linux forensic evidence to identify attack vectors, drive remediation, and present technical findings to executive and engineering stakeholders",
         tags: ["AWS", "Cloud Security", "Infrastructure"],
     },
 ];

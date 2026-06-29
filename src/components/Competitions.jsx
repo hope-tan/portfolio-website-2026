@@ -42,7 +42,7 @@ const competitions = [
         title: "Captain | Collegiate Incident Response Competition for Undergraduate Students (CIRCUS)",
         achievements: ["🏅 Top 5 Nationals 2026"],
         description:
-            "Cyber competition experience spanning investigation, resilient operations, and applied security problem solving in time-boxed scenarios.",
+            "Cyber competition experience involving digital forensics and incident response (DFIR).",
         image: "/projects/circus-2026.jpeg",
         tags: ["CTF", "Forensics", "Security Operations"],
         demoUrl: "https://circus.wccomps.org/about/",
@@ -52,7 +52,7 @@ const competitions = [
         title: "Captain | Information Security Talent Search (ISTS)",
         achievements: ["🥈 Qualifiers Runner-up 2026"],
         description:
-            "Student competition work applying offensive and defensive security skills across realistic infrastructure and application challenges.",
+            "Student competition applying offensive and defensive security skills across realistic infrastructure and application challenges.",
         image: "/projects/ists-2026.jpeg",
         tags: ["Penetration Testing", "Defense", "Collaboration"],
         demoUrl: "https://ists.io/",
