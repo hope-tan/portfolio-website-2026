@@ -4,9 +4,11 @@ import { StarBackground } from "@/components/StarBackground";
 import { CloudBackground } from "@/components/CloudBackground";
 import { Navbar } from "@/components/Navbar";
 import { HopeTan } from "@/components/HopeTan";
-import { About } from "@/components/About";
+import { Experience } from "@/components/Experience";
+import { Education } from "@/components/Education";
 import { Certifications } from "@/components/Certifications";
 import { Skills } from "../components/Skills";
+import { Competitions} from "@/components/Competitions";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -40,8 +42,10 @@ export const Home = () => {
         {/*Main content*/}
         <main>
         <HopeTan />
+        <Experience/>
+        <Education/>
+        <Competitions />
         <Projects />
-        <About/>
         <Certifications/>
         <Skills/>
         <Contact />
